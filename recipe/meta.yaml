@@ -1,4 +1,4 @@
-{% set version = "1.0.5" %}
+{% set version = "2.0.2" %}
 
 
 package:
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/harripd/H2MMpythonlib/archive/{{ version }}.tar.gz
-  sha256: 949ab32a3255d286fbb09b2bb9918bac21d4fd6c0cb4216dfc264bf82fa827ce
+  sha256: 1490e5e0eea2988c3330d8f94b481ef59c10f2e771275f38e668314b9e9a4bf8
 
 build:
-  skip: true   # [py<37]
-  script_env: 
+  skip: true  # [py<37]
+  script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script: "{{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
   number: 0
